@@ -30,3 +30,8 @@ class back_helper:
         wd = self.app.wd
         wait = WebDriverWait(wd, 5)
         wait.until(EC.visibility_of_element_located((By.LINK_TEXT, "Catalog"))).click()
+
+    def add_new_product_button(self):
+        wd = self.app.wd
+        wait = WebDriverWait(wd, 3)
+        wait.until(EC.visibility_of_element_located((By.LINK_TEXT, "Add New Product"))).click()

@@ -20,3 +20,4 @@ def test_login(app):
     app.back.set_password(config.password)
     app.back.login()
     app.back.go_to_catalog()
+    app.back.add_new_product_button()
