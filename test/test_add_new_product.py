@@ -14,7 +14,7 @@ def app(request):
 
 def test_login(app):
     wd = app.wd
-    product_name = "New " + app.back.random_chars(3, 5)
+    product_name = "New " + app.back.random_chars(5, 8)
 #    product_code = "C" + app.back.random_chars(4, 7)
     price = app.back.random_price(1,3)
     app.open_url(config.admin_url)
@@ -33,4 +33,5 @@ def test_login(app):
     app.back.set_USD_price(price)
     app.back.go_to_new_product_stock_tab()
     app.back.set_backorder_item()
+    app.back.save_new_product()
     time.sleep(2)

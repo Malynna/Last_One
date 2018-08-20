@@ -100,5 +100,9 @@ class back_helper:
         select = Select(wd.find_element_by_name("sold_out_status_id"))
         select.select_by_visible_text('Backorder Item')
 
+    def save_new_product(self):
+        wd = self.app.wd
+        wd.find_element_by_name("save").click()
+
 
 
