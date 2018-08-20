@@ -32,4 +32,5 @@ def test_login(app):
     app.back.go_to_new_product_price_tab()
     app.back.set_USD_price(price)
     app.back.go_to_new_product_stock_tab()
+    app.back.set_backorder_item()
     time.sleep(2)

@@ -3,6 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import string
 from random import *
+from selenium.webdriver.support.ui import Select
 
 
 class back_helper:
@@ -93,5 +94,11 @@ class back_helper:
     def go_to_new_product_stock_tab(self):
         wd = self.app.wd
         wd.find_element_by_xpath("//a[contains(text(),'Stock')]").click()
+
+    def set_backorder_item(self):
+        wd = self.app.wd
+        select = Select(wd.find_element_by_name("sold_out_status_id"))
+        select.select_by_visible_text('Backorder Item')
+
 
 
