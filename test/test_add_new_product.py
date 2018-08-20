@@ -22,4 +22,6 @@ def test_login(app):
     app.back.go_to_catalog()
     app.back.add_new_product_button()
     app.back.set_enable_status_in_new_product()
-
+    app.back.unset_root_category_in_checkbox()
+    app.back.set_category_in_checkbox()
+    time.sleep(2)
