@@ -1,14 +1,15 @@
 from selenium import webdriver
-from fixture.session import SessionHelper
-from config import config
+from fixture.session import session_helper
+from Pages.back_page import back_helper
 
-class Application:
+class application:
 
     def __init__(self):
         self.wd = webdriver.Chrome()
-        self.session = SessionHelper(self)
+        self.session = session_helper(self)
+        self.back = back_helper(self)
 
-    def open_home_page(self, url):
+    def open_url(self, url):
         wd = self.wd
         wd.get(url)
 

@@ -3,8 +3,8 @@ from win32com import client
 import win32com
 from config import config
 
-def handle_window(app):
-    wd = app.wd
+def handle_window(self):
+    wd = self.wd
     shell = win32com.client.Dispatch("WScript.Shell")
     shell.Sendkeys(config.username)
     time.sleep(2)

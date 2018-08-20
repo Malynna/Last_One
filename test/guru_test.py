@@ -1,5 +1,5 @@
 import pytest
-from fixture.application import Application
+from fixture.application import application
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -9,7 +9,7 @@ from config import config
 
 @pytest.fixture
 def app(request):
-    fixture = Application()
+    fixture = application()
     request.addfinalizer(fixture.destroy)
     return fixture
 
