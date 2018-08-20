@@ -45,12 +45,29 @@ class back_helper:
     def unset_root_category_in_checkbox(self):
         wd = self.app.wd
         wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Root']").click()
+        check = wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Root']").is_selected()
+        if check:
+            wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Root']").click()
+            print ('Checkbox Root is not selected now')
+        else:
+            print ('Checkbox Root is unselected')
 
     def set_category_in_checkbox(self):
         wd = self.app.wd
-        wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Łukasz']").click()
+        check = wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Łukasz']").is_selected()
+        if check:
+            print ('Checkbox Łukasz is already selected')
+        else:
+            wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Łukasz']").click()
+            print ('Checkbox Łukasz is selected now')
 
     def random_chars(self, min_chars, max_chars):
         wd = self.app.wd
         allchars = string.ascii_letters + string.digits
         return "".join(choice(allchars) for x in range(randint(min_chars, max_chars)))
+
+    def set_name_of_new_product(self,product_name):
+        wd = self.app.wd
+        name_box = wd.find_element_by_name("name[en]")
+        name_box.click()
+        name_box.send_keys(product_name)
