@@ -13,11 +13,15 @@ def app(request):
     request.addfinalizer(fixture.destroy)
     return fixture
 
-def test_login(app):
+def test_login_last_task(app):
     wd = app.wd
-    app.open_home_page(config.admin_url)
+    app.open_home_page(config.guru_url)
+    e = wd.find_element_by_name("cusid")
+    e.click()
+    e.send_keys("53920")
+    wd.find_element_by_name("submit").click()
     alert = wd.switch_to_alert()
-    alert.send_keys("asdads")
+    alert.accept()
     alert.accept()
     time.sleep(8)
     wd.find_element_by_name("cusid").click()
