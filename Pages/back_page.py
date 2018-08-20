@@ -35,3 +35,7 @@ class back_helper:
         wd = self.app.wd
         wait = WebDriverWait(wd, 3)
         wait.until(EC.visibility_of_element_located((By.LINK_TEXT, "Add New Product"))).click()
+
+    def set_enable_status_in_new_product(self):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("label.btn.btn-default").click()

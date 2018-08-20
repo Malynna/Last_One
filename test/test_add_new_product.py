@@ -21,3 +21,5 @@ def test_login(app):
     app.back.login()
     app.back.go_to_catalog()
     app.back.add_new_product_button()
+    app.back.set_enable_status_in_new_product()
+
