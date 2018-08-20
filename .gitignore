@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#nasz config
+dupajasia.py
+cfg_ATT.py
+config.py
+gdzie_sa_moje_pinionce.py
