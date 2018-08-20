@@ -27,6 +27,6 @@ def test_login(app):
     app.back.unset_root_category_in_checkbox()
     app.back.set_category_in_checkbox()
     app.back.set_name_of_new_product(product_name)
-    app.back.set_code_of_new_product(product_code)
+ #   app.back.set_code_of_new_product(product_code)
     app.back.go_to_new_product_price_tab()
     time.sleep(2)
