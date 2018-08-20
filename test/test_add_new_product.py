@@ -16,8 +16,4 @@ def app(request):
 def test_login(app):
     wd = app.wd
     app.open_home_page(config.admin_url)
-    alert = wd.switch_to_alert()
-    alert.send_keys("asdads")
-    alert.accept()
-    time.sleep(8)
-    wd.find_element_by_name("cusid").click()
+    assert
