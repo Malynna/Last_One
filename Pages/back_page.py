@@ -62,9 +62,11 @@ class back_helper:
             print ('Checkbox Łukasz is selected now')
 
     def random_chars(self, min_chars, max_chars):
-        wd = self.app.wd
         allchars = string.ascii_letters + string.digits
         return "".join(choice(allchars) for x in range(randint(min_chars, max_chars)))
+
+    def random_price(self, min_chars, max_chars):
+        return "".join(choice(string.digits) for x in range (randint(min_chars, max_chars)))
 
     def set_name_of_new_product(self,product_name):
         wd = self.app.wd
@@ -81,3 +83,9 @@ class back_helper:
     def go_to_new_product_price_tab(self):
         wd = self.app.wd
         wd.find_element_by_xpath("//a[contains(text(),'Prices')]").click()
+
+    def set_USD_price(self, price):
+        wd = self.app.wd
+        USD_price = wd.find_element_by_name("gross_prices[USD]")
+        USD_price.click()
+        USD_price.send_keys(price)

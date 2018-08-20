@@ -15,7 +15,8 @@ def app(request):
 def test_login(app):
     wd = app.wd
     product_name = "New " + app.back.random_chars(3, 5)
-    product_code = "C" + app.back.random_chars(4, 7)
+#    product_code = "C" + app.back.random_chars(4, 7)
+    price = app.back.random_price(1,3)
     app.open_url(config.admin_url)
     assert app.session.check_tittle() == "OSTATECZNE ZADANIE"
     app.back.set_username(config.username)
@@ -29,4 +30,5 @@ def test_login(app):
     app.back.set_name_of_new_product(product_name)
  #   app.back.set_code_of_new_product(product_code)
     app.back.go_to_new_product_price_tab()
+    app.back.set_USD_price(price)
     time.sleep(2)
