@@ -71,3 +71,9 @@ class back_helper:
         name_box = wd.find_element_by_name("name[en]")
         name_box.click()
         name_box.send_keys(product_name)
+
+    def set_code_of_new_product(self,product_code):
+        wd = self.app.wd
+        name_box = wd.find_element_by_name("code")
+        name_box.click()
+        name_box.send_keys(product_code)
