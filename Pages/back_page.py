@@ -89,3 +89,9 @@ class back_helper:
         USD_price = wd.find_element_by_name("gross_prices[USD]")
         USD_price.click()
         USD_price.send_keys(price)
+
+    def go_to_new_product_stock_tab(self):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//a[contains(text(),'Stock')]").click()
+
+

@@ -31,4 +31,5 @@ def test_login(app):
  #   app.back.set_code_of_new_product(product_code)
     app.back.go_to_new_product_price_tab()
     app.back.set_USD_price(price)
+    app.back.go_to_new_product_stock_tab()
     time.sleep(2)
