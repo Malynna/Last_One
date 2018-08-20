@@ -25,7 +25,6 @@ def test_login(app):
     app.back.go_to_catalog()
     app.back.add_new_product_button()
     app.back.set_enable_status_in_new_product()
-    app.back.unset_root_category_in_checkbox()
     app.back.set_category_in_checkbox()
     app.back.set_name_of_new_product(product_name)
  #   app.back.set_code_of_new_product(product_code)
@@ -34,4 +33,3 @@ def test_login(app):
     app.back.go_to_new_product_stock_tab()
     app.back.set_backorder_item()
     app.back.save_new_product()
-    time.sleep(2)

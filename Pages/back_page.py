@@ -43,18 +43,16 @@ class back_helper:
         wd = self.app.wd
         wd.find_element_by_css_selector("label.btn.btn-default").click()
 
-    def unset_root_category_in_checkbox(self):
+    def set_category_in_checkbox(self):
         wd = self.app.wd
         wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Root']").click()
-        check = wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Root']").is_selected()
-        if check:
+        check_root = wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Root']").is_selected()
+        if check_root:
             wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Root']").click()
             print ('Checkbox Root is not selected now')
         else:
             print ('Checkbox Root is unselected')
 
-    def set_category_in_checkbox(self):
-        wd = self.app.wd
         check = wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Łukasz']").is_selected()
         if check:
             print ('Checkbox Łukasz is already selected')
