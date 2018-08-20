@@ -15,6 +15,8 @@ def app(request):
 def test_login(app):
     wd = app.wd
     app.open_url(config.admin_url)
-    assert wd.title == "OSTATECZNE ZADANIE"
+    assert app.session.check_tittle() == "OSTATECZNE ZADANIE"
     app.back.set_username(config.username)
     app.back.set_password(config.password)
+    app.back.login()
+    app.back.go_to_catalog()
