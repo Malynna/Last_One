@@ -36,7 +36,7 @@ class back_helper:
     def add_new_product_button(self):
         wd = self.app.wd
         wait = WebDriverWait(wd, 3)
-        wait.until(EC.visibility_of_element_located((By.LINK_TEXT, "Add New Product"))).click()
+        wait.until(EC.visibility_of_element_located((By.XPATH, "//a[contains(text(),'Add New Product')]"))).click()
 
     def set_enable_status_in_new_product(self):
         wd = self.app.wd
@@ -77,3 +77,7 @@ class back_helper:
         name_box = wd.find_element_by_name("code")
         name_box.click()
         name_box.send_keys(product_code)
+
+    def go_to_new_product_price_tab(self):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//a[contains(text(),'Prices')]").click()
