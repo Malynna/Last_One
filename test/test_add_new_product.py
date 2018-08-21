@@ -1,9 +1,5 @@
 import pytest
 from fixture.application import application
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-import time
 from config import config
 
 @pytest.fixture
@@ -23,6 +19,7 @@ def test_login(app):
     app.back.set_password(config.password)
     app.back.login()
     app.back.go_to_catalog()
+    assert app.back.check_logout()
     app.back.add_new_product_button()
     app.back.set_enable_status_in_new_product()
     app.back.set_category_in_checkbox()
@@ -34,6 +31,6 @@ def test_login(app):
     app.back.set_backorder_item()
     app.back.save_new_product()
     app.back.go_to_front_page()
+    assert app.front.check_url(config.base_url)
     app.front.go_to_category()
     assert app.front.check_label_new_on_product(product_name)
-    time.sleep(2)

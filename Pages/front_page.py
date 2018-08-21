@@ -13,3 +13,8 @@ class front_helper:
     def check_label_new_on_product(self, product_name):
         wd = self.app.wd
         return wd.find_element(By.XPATH, "//*[@alt = '%s']/../*[@title = 'New']" % product_name)
+
+    def check_url(self, url):
+        wd = self.app.wd
+        return EC.url_contains(url)
+

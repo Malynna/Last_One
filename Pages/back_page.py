@@ -106,5 +106,7 @@ class back_helper:
         wd = self.app.wd
         wd.find_element_by_css_selector("i.fa.fa-chevron-circle-left").click()
 
-
+    def check_logout(self):
+        wd = self.app.wd
+        return wd.find_element_by_xpath("//*[@title = 'Logout']")
 
