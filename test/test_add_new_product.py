@@ -35,4 +35,5 @@ def test_login(app):
     app.back.save_new_product()
     app.back.go_to_front_page()
     app.front.go_to_category()
-    app.front.find_already_added_product(product_name)
+    assert app.front.check_label_new_on_product(product_name)
+    time.sleep(2)
