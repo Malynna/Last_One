@@ -102,5 +102,9 @@ class back_helper:
         wd = self.app.wd
         wd.find_element_by_name("save").click()
 
+    def go_to_front_page(self):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("i.fa.fa-chevron-circle-left").click()
+
 
 

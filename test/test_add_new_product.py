@@ -33,3 +33,6 @@ def test_login(app):
     app.back.go_to_new_product_stock_tab()
     app.back.set_backorder_item()
     app.back.save_new_product()
+    app.back.go_to_front_page()
+    app.front.go_to_category()
+    app.front.find_already_added_product(product_name)
