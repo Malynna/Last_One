@@ -8,7 +8,7 @@ def app(request):
     request.addfinalizer(fixture.destroy)
     return fixture
 
-def test_login(app):
+def test_add_new_product(app):
     wd = app.wd
     product_name = "New " + app.back.random_chars(5, 8)
 #    product_code = "C" + app.back.random_chars(4, 7)
