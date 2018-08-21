@@ -1,7 +1,7 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-class front_helper:
+class frontend_helper:
 
     def __init__(self, app):
         self.app = app

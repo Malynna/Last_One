@@ -6,7 +6,7 @@ from random import *
 from selenium.webdriver.support.ui import Select
 
 
-class back_helper:
+class backend_helper:
 
     def __init__(self, app):
         self.app = app
