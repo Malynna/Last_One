@@ -32,10 +32,14 @@ class frontend_helper:
 
     def click_product(self, product_name):
         wd = self.app.wd
-        wd.find_element_by_css_selector(".product.column.hover-light[data-name='%s']" % product_name).click()
+        return wd.find_element_by_css_selector(".product.column.hover-light[data-name='%s']" % product_name).click()
 
-    def add_product_to_cart(self):
+    def max_window(self):
+        wait = self.app.common.wait()
+        wait.until(EC.visibility_of_element_located((By.ID, "view-full-page"))).click()
+
+    def click_button_add_to_cart(self):
         wd = self.app.wd
-        wd.find_element_by_name("add_cart_product").click()
+        return wd.find_element_by_css_selector(".btn-success").click()
 
 

@@ -48,8 +48,7 @@ class backend_helper:
         wd.find_element_by_link_text("Łukasz").click()
 
     def click_new_product_button(self):
-        wd = self.app.wd
-        wait = WebDriverWait(wd, 3)
+        wait = self.app.common.wait()
         wait.until(EC.visibility_of_element_located((By.LINK_TEXT, "Add New Product"))).click()
 
     def set_enable_status_in_product(self):
