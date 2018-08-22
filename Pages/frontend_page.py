@@ -1,6 +1,6 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from config import config
+import time
 
 class frontend_helper:
 
@@ -36,10 +36,16 @@ class frontend_helper:
 
     def click_button_add_to_cart(self):
         wd = self.app.wd
-        return wd.find_element_by_css_selector(".btn-success").click()
+        return wd.find_element_by_name("add_cart_product").click()
 
     def add_product_to_cart(self, product_name, category_name):
         self.click_product(product_name)
         self.max_window()
         self.click_button_add_to_cart()
         self.go_to_category(category_name)
+
+    def go_to_cart(self):
+        wd = self.app.wd
+        return wd.find_element_by_id("cart").click()
+
+
