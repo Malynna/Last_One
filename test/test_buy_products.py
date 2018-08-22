@@ -16,7 +16,4 @@ def test_buy_products(app):
     assert app.front.check_url(config.base_url)
     app.front.go_to_category_XiaomiLepsze()
     assert app.front.check_category()
-    app.front.click_product(config.first_product)
-    app.front.max_window()
-    app.front.click_button_add_to_cartt()
-    time.sleep(1)
+    app.front.add_product_to_cart(config.first_product)

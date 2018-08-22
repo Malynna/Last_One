@@ -42,4 +42,8 @@ class frontend_helper:
         wd = self.app.wd
         return wd.find_element_by_css_selector(".btn-success").click()
 
-
+    def add_product_to_cart(self, product_name):
+        self.click_product(product_name)
+        self.max_window()
+        self.click_button_add_to_cart()
+        self.go_to_category_XiaomiLepsze()
