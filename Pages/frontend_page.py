@@ -35,8 +35,8 @@ class frontend_helper:
         wait.until(EC.visibility_of_element_located((By.ID, "view-full-page"))).click()
 
     def click_button_add_to_cart(self):
-        wd = self.app.wd
-        return wd.find_element_by_name("add_cart_product").click()
+        wait = self.app.common.wait()
+        wait.until(EC.visibility_of_element_located((By.NAME,"add_cart_product"))).click()
 
     def add_product_to_cart(self, product_name, category_name):
         self.click_product(product_name)
