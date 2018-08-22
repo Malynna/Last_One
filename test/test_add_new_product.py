@@ -3,8 +3,6 @@ from fixture.application import application
 from config import config
 
 
-
-
 @pytest.fixture
 def app(request):
     fixture = application()
@@ -13,8 +11,9 @@ def app(request):
 
 
 def test_add_new_product(app):
-    product_name = "P " + app.back.random_chars(5, 8)
-    price = app.back.random_price(1,3)
+
+    price = app.common.random_digits(1, 3)
+    product_name = "P " + app.common.random_chars(5, 8)
     app.open_url(config.admin_url)
     assert app.common.check_tittle() == "OSTATECZNE ZADANIE"
     app.back.login(config.username, config.password)

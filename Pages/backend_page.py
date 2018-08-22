@@ -1,8 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-import string
-from random import *
+
 from selenium.webdriver.support.ui import Select
 
 
@@ -53,13 +52,6 @@ class backend_helper:
     def set_enable_status_in_product(self):
         wd = self.app.wd
         wd.find_element_by_css_selector("label.btn.btn-default").click()
-
-    def random_chars(self, min_chars, max_chars):
-        allchars = string.ascii_letters + string.digits
-        return "".join(choice(allchars) for x in range(randint(min_chars, max_chars)))
-
-    def random_price(self, min_chars, max_chars):
-        return "".join(choice(string.digits) for x in range (randint(min_chars, max_chars)))
 
     def set_name_of_product(self, product_name):
         wd = self.app.wd
