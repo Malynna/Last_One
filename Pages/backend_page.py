@@ -50,7 +50,7 @@ class backend_helper:
         wait = WebDriverWait(wd, 3)
         wait.until(EC.visibility_of_element_located((By.LINK_TEXT, "Add New Product"))).click()
 
-    def set_enable_status_in_new_product(self):
+    def set_enable_status_in_product(self):
         wd = self.app.wd
         wd.find_element_by_css_selector("label.btn.btn-default").click()
 
@@ -94,7 +94,7 @@ class backend_helper:
         self.go_to_catalog()
         self.set_category()
         self.click_new_product_button()
-        self.set_enable_status_in_new_product()
+        self.set_enable_status_in_product()
         self.set_name_of_product(product_name)
         self.go_to_product_price_tab()
         self.set_usd_price(price)

@@ -19,7 +19,7 @@ def test_add_new_product(app):
     assert app.common.check_tittle() == "OSTATECZNE ZADANIE"
     app.back.login(config.username, config.password)
     assert app.back.check_logout()
-
+    app.back.add_new_product(product_name,price)
     app.back.go_to_front_page()
     assert app.front.check_url(config.base_url)
     app.front.go_to_category()
