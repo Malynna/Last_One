@@ -1,5 +1,6 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from config import config
 
 class frontend_helper:
 
@@ -23,9 +24,18 @@ class frontend_helper:
 
     def check_shopping_cart(self):
         wd = self.app.wd
-        return wd.find_element_by_css_selector("div.title")
+        return wd.find_element_by_css_selector("div.title").text == "Shopping Cart"
 
     def check_category(self):
         wd = self.app.wd
         return wd.find_element(By.XPATH, "//h1[@class = 'title']").text == "XiaomiLepsze"
+
+    def click_product(self, product_name):
+        wd = self.app.wd
+        wd.find_element_by_css_selector(".product.column.hover-light[data-name='%s']" % product_name).click()
+
+    def add_product_to_cart(self):
+        wd = self.app.wd
+        wd.find_element_by_name("add_cart_product").click()
+
 

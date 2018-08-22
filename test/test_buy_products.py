@@ -16,4 +16,6 @@ def test_buy_products(app):
     assert app.front.check_url(config.base_url)
     app.front.go_to_category_XiaomiLepsze()
     assert app.front.check_category()
-    time.sleep(5)
+    app.front.click_product(config.first_product)
+    app.front.add_product_to_cart()
+    time.sleep(1)
