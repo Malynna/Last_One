@@ -2,6 +2,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
 
+
 class frontend_helper:
 
     def __init__(self, app):
@@ -44,8 +45,7 @@ class frontend_helper:
         wait = self.app.common.wait()
         wd = self.app.wd
         wait.until(EC.visibility_of_element_located((By.NAME, "add_cart_product"))).click()
-        wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "div#cart span.quantity")
-                                                    , str(products + 1)))
+        wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "div#cart span.quantity"), str(products + 1)))
 
     def add_product_to_cart(self, product_name, category_name):
         wd = self.app.wd
@@ -58,4 +58,21 @@ class frontend_helper:
         wd = self.app.wd
         return wd.find_element_by_id("cart").click()
 
-
+"""
+    def fill_in_personal_fields(self):
+        wd = self.app.wd
+        tax_id_box = wd.find_element_by_name("tax_id")
+        tax_id_box.click()
+        tax_id_box.clear()
+        tax_id_box.send_keys(username)
+    tax_id_box
+    company_box
+    first_name_box
+    last_name_box
+    address_1_box
+    address_2_box
+    postal_code_box
+    city_box
+    email_box
+    phone_box
+"""

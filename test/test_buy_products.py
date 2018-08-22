@@ -1,7 +1,6 @@
 import pytest
 from fixture.application import application
 from config import config
-import time
 
 
 @pytest.fixture

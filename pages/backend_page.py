@@ -4,11 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 
-def prices(app):
-
-    price = app.common.random_digits(1, 3)
-    return price
-
 class backend_helper:
 
     def __init__(self, app):

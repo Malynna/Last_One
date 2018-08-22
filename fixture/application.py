@@ -10,7 +10,7 @@ class application:
         self.back = backend_helper(self)
         self.front = frontend_helper(self)
         self.common = commmon_helper(self)
-        self.vars = variables(self)
+        self.vars = variables()
 
     def open_url(self, url):
         wd = self.wd
