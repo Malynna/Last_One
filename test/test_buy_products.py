@@ -17,8 +17,6 @@ def test_buy_products(app):
     app.front.go_to_category(config.category_XiaomiLepsze)
     assert app.front.check_category()
     app.front.add_product_to_cart(config.first_product,config.category_XiaomiLepsze)
-    time.sleep(30)
     app.front.add_product_to_cart(config.second_product,config.category_XiaomiLepsze)
     app.front.add_product_to_cart(config.third_product,config.category_XiaomiLepsze)
     app.front.go_to_cart()
-    time.sleep(5)

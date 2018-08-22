@@ -1,7 +1,7 @@
 from selenium import webdriver
-from Pages.backend_page import backend_helper
-from Pages.common import commmon_helper
-from Pages.frontend_page import frontend_helper
+from pages.backend_page import backend_helper
+from pages.common import commmon_helper
+from pages.frontend_page import frontend_helper
 
 class application:
 

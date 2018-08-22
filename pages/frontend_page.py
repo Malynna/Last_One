@@ -34,15 +34,26 @@ class frontend_helper:
         wait = self.app.common.wait()
         wait.until(EC.visibility_of_element_located((By.ID, "view-full-page"))).click()
 
+    def check_number_of_producs_in_cart(self):
+        wd = self.app.wd
+        products = int(wd.find_element_by_css_selector("div#cart span.quantity").text)
+        return products
+
     def click_button_add_to_cart(self):
+        products = self.check_number_of_producs_in_cart()
         wait = self.app.common.wait()
-        wait.until(EC.visibility_of_element_located((By.NAME,"add_cart_product"))).click()
+        wd = self.app.wd
+        wd.find_element_by_name("add_cart_product").click()
+        wait.until(EC.text_to_be_present_in_element((By.NAME, "add_cart_product"), str(products + 1)))
 
     def add_product_to_cart(self, product_name, category_name):
+        wd = self.app.wd
         self.click_product(product_name)
         self.max_window()
         self.click_button_add_to_cart()
-        self.go_to_category(category_name)
+        time.sleep(5)
+  #      self.go_to_category(category_name)
+        wd.find_element_by_class_name("%s" % category_name).click()
 
     def go_to_cart(self):
         wd = self.app.wd
