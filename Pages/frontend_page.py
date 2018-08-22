@@ -25,7 +25,7 @@ class frontend_helper:
         wd = self.app.wd
         return wd.find_element_by_css_selector("div.title")
 
-    def click_first_product(self):
+    def check_category(self):
         wd = self.app.wd
-        return wd.find_element(By.XPATH, "//h1[@class = 'title']").click
+        return wd.find_element(By.XPATH, "//h1[@class = 'title']").text == "XiaomiLepsze"
 
