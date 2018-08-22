@@ -23,3 +23,14 @@ class commmon_helper:
 
     def random_digits(self, min_chars, max_chars):
         return "".join(choice(string.digits) for x in range(randint(min_chars, max_chars)))
+
+class variables:
+
+    cat_XiaomiLepsze = "category-1"
+    cat_Lukasz = "category-3"
+    first = "Mi A1"
+    second = "Mi 8"
+    third = "Mi Mix 2S"
+
+    def __init__(self, app):
+        self.app = app
