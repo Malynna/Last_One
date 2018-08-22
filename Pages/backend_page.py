@@ -77,7 +77,7 @@ class backend_helper:
         usd_price.click()
         usd_price.send_keys(price)
 
-    def go_to_new_product_stock_tab(self):
+    def go_to_product_stock_tab(self):
         wd = self.app.wd
         wd.find_element_by_link_text("Stock").click()
 
@@ -86,9 +86,21 @@ class backend_helper:
         select = Select(wd.find_element_by_name("sold_out_status_id"))
         select.select_by_visible_text('Backorder Item')
 
-    def save_new_product(self):
+    def save_product(self):
         wd = self.app.wd
         wd.find_element_by_name("save").click()
+
+    def add_new_product(self,product_name,price):
+        self.go_to_catalog()
+        self.set_category()
+        self.click_new_product_button()
+        self.set_enable_status_in_new_product()
+        self.set_name_of_product(product_name)
+        self.go_to_product_price_tab()
+        self.set_usd_price(price)
+        self.go_to_product_stock_tab()
+        self.set_backorder_item()
+        self.save_product()
 
     def go_to_front_page(self):
         wd = self.app.wd
