@@ -6,6 +6,7 @@ from random import *
 from selenium.webdriver.support.ui import Select
 
 
+
 class backend_helper:
 
     def __init__(self, app):
@@ -36,37 +37,22 @@ class backend_helper:
         self.set_password(password)
         self.login_button()
 
-
     def go_to_catalog(self):
-        wd = self.app.wd
         wait = self.app.common.wait()
         wait.until(EC.visibility_of_element_located((By.LINK_TEXT, "Catalog"))).click()
 
-    def add_new_product_button(self):
+    def set_category(self):
+        wd = self.app.wd
+        wd.find_element_by_link_text("Łukasz").click()
+
+    def click_new_product_button(self):
         wd = self.app.wd
         wait = WebDriverWait(wd, 3)
-        wait.until(EC.visibility_of_element_located((By.XPATH, "//a[contains(text(),'Add New Product')]"))).click()
+        wait.until(EC.visibility_of_element_located((By.LINK_TEXT, "Add New Product"))).click()
 
     def set_enable_status_in_new_product(self):
         wd = self.app.wd
         wd.find_element_by_css_selector("label.btn.btn-default").click()
-
-    def set_category_in_checkbox(self):
-        wd = self.app.wd
-        wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Root']").click()
-        check_root = wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Root']").is_selected()
-        if check_root:
-            wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Root']").click()
-            print ('Checkbox Root is not selected now')
-        else:
-            print ('Checkbox Root is unselected')
-
-        check = wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Łukasz']").is_selected()
-        if check:
-            print ('Checkbox Łukasz is already selected')
-        else:
-            wd.find_element_by_xpath("//input[@name='categories[]' and @data-name='Łukasz']").click()
-            print ('Checkbox Łukasz is selected now')
 
     def random_chars(self, min_chars, max_chars):
         allchars = string.ascii_letters + string.digits
@@ -75,21 +61,15 @@ class backend_helper:
     def random_price(self, min_chars, max_chars):
         return "".join(choice(string.digits) for x in range (randint(min_chars, max_chars)))
 
-    def set_name_of_new_product(self,product_name):
+    def set_name_of_product(self, product_name):
         wd = self.app.wd
         name_box = wd.find_element_by_name("name[en]")
         name_box.click()
         name_box.send_keys(product_name)
 
-    #def set_code_of_new_product(self,product_code):
-    #    wd = self.app.wd
-    #    name_box = wd.find_element_by_name("code")
-    #    name_box.click()
-    #    name_box.send_keys(product_code)
-
-    def go_to_new_product_price_tab(self):
+    def go_to_product_price_tab(self):
         wd = self.app.wd
-        wd.find_element_by_xpath("//a[contains(text(),'Prices')]").click()
+        wd.find_element_by_link_text("Prices").click()
 
     def set_usd_price(self, price):
         wd = self.app.wd
@@ -99,7 +79,7 @@ class backend_helper:
 
     def go_to_new_product_stock_tab(self):
         wd = self.app.wd
-        wd.find_element_by_xpath("//a[contains(text(),'Stock')]").click()
+        wd.find_element_by_link_text("Stock").click()
 
     def set_backorder_item(self):
         wd = self.app.wd
