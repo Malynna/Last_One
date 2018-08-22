@@ -25,13 +25,21 @@ class backend_helper:
         password_box.clear()
         password_box.send_keys(password)
 
-    def login(self):
+    def login_button(self):
         wd = self.app.wd
+        wait = self.app.common.wait()
         wd.find_element_by_class_name("btn").click()
+        wait.until(EC.visibility_of_element_located((By.XPATH, "//*[@title = 'Logout']")))
+
+    def login(self, username, password):
+        self.set_username(username)
+        self.set_password(password)
+        self.login_button()
+
 
     def go_to_catalog(self):
         wd = self.app.wd
-        wait = WebDriverWait(wd, 5)
+        wait = self.app.common.wait()
         wait.until(EC.visibility_of_element_located((By.LINK_TEXT, "Catalog"))).click()
 
     def add_new_product_button(self):
@@ -83,11 +91,11 @@ class backend_helper:
         wd = self.app.wd
         wd.find_element_by_xpath("//a[contains(text(),'Prices')]").click()
 
-    def set_USD_price(self, price):
+    def set_usd_price(self, price):
         wd = self.app.wd
-        USD_price = wd.find_element_by_name("gross_prices[USD]")
-        USD_price.click()
-        USD_price.send_keys(price)
+        usd_price = wd.find_element_by_name("gross_prices[USD]")
+        usd_price.click()
+        usd_price.send_keys(price)
 
     def go_to_new_product_stock_tab(self):
         wd = self.app.wd
