@@ -1,7 +1,7 @@
 import pytest
 from fixture.application import application
 from config import config
-
+import time
 
 
 @pytest.fixture
@@ -14,3 +14,4 @@ def app(request):
 def test_buy_products(app):
     app.open_url(config.base_url)
     assert app.front.check_url(config.base_url)
+    app.front.go_to_category_XiaomiLepsze()
