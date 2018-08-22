@@ -1,10 +1,13 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-
 from selenium.webdriver.support.ui import Select
 
 
+def prices(app):
+
+    price = app.common.random_digits(1, 3)
+    return price
 
 class backend_helper:
 
@@ -96,9 +99,8 @@ class backend_helper:
 
     def go_to_front_page(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector("i.fa.fa-chevron-circle-left").click()
+        wd.find_element_by_css_selector("i.fa-chevron-circle-left").click()
 
     def check_logout(self):
         wd = self.app.wd
         return wd.find_element_by_xpath("//*[@title = 'Logout']")
-

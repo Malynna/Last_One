@@ -15,6 +15,9 @@ class frontend_helper:
         return wd.find_element(By.XPATH, "//*[@alt = '%s']/../*[@title = 'New']" % product_name)
 
     def check_url(self, url):
-        wd = self.app.wd
         return EC.url_contains(url)
+
+    def check_shopping_cart(self):
+        wd = self.app.wd
+        return wd.find_element_by_css_selector("div.title")
 
