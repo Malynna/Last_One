@@ -1,7 +1,7 @@
 
 
 
-class session_helper:
+class commmon_helper:
 
     def __init__(self, app):
         self.app = app

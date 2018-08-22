@@ -9,12 +9,11 @@ def app(request):
     return fixture
 
 def test_add_new_product(app):
-    wd = app.wd
     product_name = "New " + app.back.random_chars(5, 8)
 #    product_code = "C" + app.back.random_chars(4, 7)
     price = app.back.random_price(1,3)
     app.open_url(config.admin_url)
-    assert app.session.check_tittle() == "OSTATECZNE ZADANIE"
+    assert app.common.check_tittle() == "OSTATECZNE ZADANIE"
     app.back.set_username(config.username)
     app.back.set_password(config.password)
     app.back.login()
