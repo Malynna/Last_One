@@ -20,5 +20,5 @@ def test_add_new_product(app):
     app.back.add_new_product(product_name,price)
     app.back.go_to_front_page()
     assert app.front.check_shopping_cart()
-    app.front.go_to_category_Lukasz()
+    app.front.go_to_category(config.category_Lukasz)
     assert app.front.check_label_new_on_product(product_name)

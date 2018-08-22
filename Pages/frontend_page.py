@@ -7,13 +7,9 @@ class frontend_helper:
     def __init__(self, app):
         self.app = app
 
-    def go_to_category_Lukasz(self):
+    def go_to_category(self, category_name):
         wd = self.app.wd
-        wd.find_element_by_class_name("category-3").click()
-
-    def go_to_category_XiaomiLepsze(self):
-        wd = self.app.wd
-        wd.find_element_by_class_name("category-1").click()
+        wd.find_element_by_class_name("%s" % category_name).click()
 
     def check_label_new_on_product(self, product_name):
         wd = self.app.wd
@@ -42,8 +38,8 @@ class frontend_helper:
         wd = self.app.wd
         return wd.find_element_by_css_selector(".btn-success").click()
 
-    def add_product_to_cart(self, product_name):
+    def add_product_to_cart(self, product_name, category_name):
         self.click_product(product_name)
         self.max_window()
         self.click_button_add_to_cart()
-        self.go_to_category_XiaomiLepsze()
+        self.go_to_category(category_name)
