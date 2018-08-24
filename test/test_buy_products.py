@@ -16,6 +16,7 @@ def test_buy_products(app):
     app.front.add_product_to_cart(td.products["first"], td.categories["phones"])
     app.front.add_product_to_cart(td.products["second"], td.categories["phones"])
     app.front.add_product_to_cart(td.products["third"], td.categories["phones"])
+    assert app.front.check_no_emptyness_in_cart()
     app.front.go_to_cart()
     app.front.fill_fields_and_confirm_order(td.personal_data["tax_id"], td.personal_data["company"],
                                             td.personal_data["first_name"],td.personal_data["last_name"],

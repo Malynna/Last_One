@@ -41,9 +41,13 @@ class BackendHelper:
         wd = self.app.wd
         wd.find_element_by_link_text("Łukasz").click()
 
+    def new_product_button(self):
+        wait = self.app.common.wait()
+        return wait.until(ec.visibility_of_element_located((By.LINK_TEXT, "Add New Product")))
+
     def click_new_product_button(self):
         wait = self.app.common.wait()
-        wait.until(ec.visibility_of_element_located((By.LINK_TEXT, "Add New Product"))).click()
+        return wait.until(ec.visibility_of_element_located((By.LINK_TEXT, "Add New Product"))).click()
 
     def set_enable_status_in_product(self):
         wd = self.app.wd
@@ -91,6 +95,7 @@ class BackendHelper:
         self.go_to_product_stock_tab()
         self.set_backorder_item()
         self.save_product()
+        self.new_product_button()
 
     def go_to_front_page(self):
         wd = self.app.wd

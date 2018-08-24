@@ -52,7 +52,6 @@ class FrontendHelper:
                                                      "div#cart span.quantity"), str(products + 1)))
 
     def add_product_to_cart(self, product_name, category_name):
-        wd = self.app.wd
         self.go_to_category(category_name)
         self.click_product(product_name)
         self.max_window()
