@@ -3,7 +3,7 @@ import string
 from random import *
 
 
-class commmon_helper:
+class Commmon_helper:
 
     def __init__(self, app):
         self.app = app

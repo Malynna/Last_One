@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 
-class backend_helper:
+class Backend_helper:
 
     def __init__(self, app):
         self.app = app

@@ -1,9 +1,9 @@
-from data.random_generator import random_generator
+from data.random_generator import Random_generator
 
 
 
 
-class test_data(random_generator):
+class Test_data(Random_generator):
 
 
     categories = {
@@ -15,19 +15,19 @@ class test_data(random_generator):
         "first": "Mi A1",
         "second": "Mi 8",
         "third": "Mi Mix 2S",
-        "new_product": (random_generator.new_product),
-        "price": (random_generator.price)
+        "new_product": (Random_generator.new_product),
+        "price": (Random_generator.price)
     }
 
     personal_data= {
-        "tax_id": (random_generator.tax_id),
-        "company": (random_generator.company),
-        "first_name": (random_generator.first_name),
-        "last_name": (random_generator.last_name),
-        "address_1": (random_generator.address_1),
-        "address_2": (random_generator.address_2),
-        "postal_code": (random_generator.postal_code),
-        "city": (random_generator.city),
-        "email": (random_generator.email),
-        "phone": (random_generator.phone)
+        "tax_id": (Random_generator.tax_id),
+        "company": (Random_generator.company),
+        "first_name": (Random_generator.first_name),
+        "last_name": (Random_generator.last_name),
+        "address_1": (Random_generator.address_1),
+        "address_2": (Random_generator.address_2),
+        "postal_code": (Random_generator.postal_code),
+        "city": (Random_generator.city),
+        "email": (Random_generator.email),
+        "phone": (Random_generator.phone)
     }

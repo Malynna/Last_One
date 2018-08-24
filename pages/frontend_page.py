@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 
 
-class frontend_helper:
+class Frontend_helper:
 
     def __init__(self, app):
         self.app = app

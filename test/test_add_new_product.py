@@ -1,12 +1,12 @@
 import pytest
-from fixture.application import application
+from fixture.application import Application
 from config import config
-from data.test_data import test_data as td
+from data.test_data import Test_data as td
 import time
 
 @pytest.fixture
 def app(request):
-    fixture = application()
+    fixture = Application()
     request.addfinalizer(fixture.destroy)
     return fixture
 
@@ -24,4 +24,3 @@ def test_add_new_product(app):
     assert app.front.check_label_new_on_product(td.products["new_product"])
     app.front.add_product_to_cart(td.products["new_product"], td.categories["lukasz"])
     assert app.front.check_no_emptyness_in_cart()
-    time.sleep(3)

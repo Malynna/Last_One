@@ -1,12 +1,12 @@
 import pytest
-from fixture.application import application
+from fixture.application import Application
 from config import config
-from data.test_data import test_data as td
+from data.test_data import Test_data as td
 import time
 
 @pytest.fixture
 def app(request):
-    fixture = application()
+    fixture = Application()
     request.addfinalizer(fixture.destroy)
     return fixture
 
