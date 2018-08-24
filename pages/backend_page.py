@@ -1,10 +1,9 @@
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 
-class Backend_helper:
+class BackendHelper:
 
     def __init__(self, app):
         self.app = app
@@ -27,7 +26,7 @@ class Backend_helper:
         wd = self.app.wd
         wait = self.app.common.wait()
         wd.find_element_by_class_name("btn").click()
-        wait.until(EC.visibility_of_element_located((By.XPATH, "//*[@title = 'Logout']")))
+        wait.until(ec.visibility_of_element_located((By.XPATH, "//*[@title = 'Logout']")))
 
     def login(self, username, password):
         self.set_username(username)
@@ -36,7 +35,7 @@ class Backend_helper:
 
     def go_to_catalog(self):
         wait = self.app.common.wait()
-        wait.until(EC.visibility_of_element_located((By.LINK_TEXT, "Catalog"))).click()
+        wait.until(ec.visibility_of_element_located((By.LINK_TEXT, "Catalog"))).click()
 
     def set_category(self):
         wd = self.app.wd
@@ -44,7 +43,7 @@ class Backend_helper:
 
     def click_new_product_button(self):
         wait = self.app.common.wait()
-        wait.until(EC.visibility_of_element_located((By.LINK_TEXT, "Add New Product"))).click()
+        wait.until(ec.visibility_of_element_located((By.LINK_TEXT, "Add New Product"))).click()
 
     def set_enable_status_in_product(self):
         wd = self.app.wd

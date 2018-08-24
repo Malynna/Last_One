@@ -1,9 +1,8 @@
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
-import time
 
 
-class Frontend_helper:
+class FrontendHelper:
 
     def __init__(self, app):
         self.app = app
@@ -35,7 +34,7 @@ class Frontend_helper:
 
     def max_window(self):
         wait = self.app.common.wait()
-        wait.until(EC.visibility_of_element_located((By.ID, "view-full-page"))).click()
+        wait.until(ec.visibility_of_element_located((By.ID, "view-full-page"))).click()
 
     def check_number_of_producs_in_cart(self):
         wd = self.app.wd
@@ -43,14 +42,13 @@ class Frontend_helper:
         return products
 
     def check_no_emptyness_in_cart(self):
-        if self.check_number_of_producs_in_cart() >0: return True
+        if self.check_number_of_producs_in_cart() > 0: return True
 
     def click_button_add_to_cart(self):
         products = self.check_number_of_producs_in_cart()
         wait = self.app.common.wait()
-        wd = self.app.wd
-        wait.until(EC.visibility_of_element_located((By.NAME, "add_cart_product"))).click()
-        wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR,
+        wait.until(ec.visibility_of_element_located((By.NAME, "add_cart_product"))).click()
+        wait.until(ec.text_to_be_present_in_element((By.CSS_SELECTOR,
                                                      "div#cart span.quantity"), str(products + 1)))
 
     def add_product_to_cart(self, product_name, category_name):
@@ -68,7 +66,7 @@ class Frontend_helper:
                                 postal_code, city, email, phone):
         wd = self.app.wd
         wait = self.app.common.wait()
-        tax_id_box = wait.until(EC.visibility_of_element_located((By.NAME, ("tax_id"))))
+        tax_id_box = wait.until(ec.visibility_of_element_located((By.NAME, "tax_id")))
         tax_id_box.click()
         tax_id_box.clear()
         tax_id_box.send_keys(tax_id)
@@ -111,11 +109,11 @@ class Frontend_helper:
 
     def click_button_save_changes(self):
         wait = self.app.common.wait()
-        wait.until(EC.element_to_be_clickable((By.NAME, "save_customer_details"))).click()
+        wait.until(ec.element_to_be_clickable((By.NAME, "save_customer_details"))).click()
 
     def click_button_confirm_order(self):
         wait = self.app.common.wait()
-        wait.until(EC.element_to_be_clickable((By.NAME, "confirm_order"))).click()
+        wait.until(ec.element_to_be_clickable((By.NAME, "confirm_order"))).click()
 
     def fill_fields_and_confirm_order(self, tax_id, company, first_name, last_name, address_1, address_2,
                                       postal_code, city, email, phone):
@@ -126,5 +124,5 @@ class Frontend_helper:
 
     def check_message_on_site(self):
         wait = self.app.common.wait()
-        return wait.until(EC.text_to_be_present_in_element((By.XPATH, "//*[@id='main-message']/h1"),
+        return wait.until(ec.text_to_be_present_in_element((By.XPATH, "//*[@id='main-message']/h1"),
                                                     "Ta strona nie działa"))

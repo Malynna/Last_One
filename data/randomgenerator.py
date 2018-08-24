@@ -2,7 +2,7 @@ import string
 from random import *
 
 
-class Random_generator:
+class RandomGenerator:
     def random_chars(min, max):
         allchars = string.ascii_letters + string.digits
         return "".join(choice(allchars) for x in range(randint(min, max)))

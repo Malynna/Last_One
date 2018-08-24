@@ -1,9 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
-import string
-from random import *
 
 
-class Commmon_helper:
+class CommmonHelper:
 
     def __init__(self, app):
         self.app = app

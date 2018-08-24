@@ -1,8 +1,7 @@
 import pytest
 from fixture.application import Application
 from config import config
-from data.test_data import Test_data as td
-import time
+from data.testdata import TestData as td
 
 @pytest.fixture
 def app(request):
