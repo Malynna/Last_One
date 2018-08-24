@@ -9,3 +9,6 @@ class random_generator:
 
     def random_digits( min_chars, max_chars):
         return "".join(choice(string.digits) for x in range(randint(min_chars, max_chars)))
+
+    new_product = "P " + random_chars(4, 8)
+    price = random_digits(1 ,3)

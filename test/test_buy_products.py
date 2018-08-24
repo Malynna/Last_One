@@ -14,9 +14,7 @@ def app(request):
 def test_buy_products(app):
     app.open_url(config.base_url)
     assert app.front.check_url(config.base_url)
-    app.front.go_to_category(td.categories["XiaomiLepsze"])
-    assert app.front.check_category()
-    app.front.add_product_to_cart(td.products["first"], td.categories["XiaomiLepsze"])
-    app.front.add_product_to_cart(td.products["second"], td.categories["XiaomiLepsze"])
-    app.front.add_product_to_cart(td.products["third"], td.categories["XiaomiLepsze"])
+    app.front.add_product_to_cart(td.products["first"], td.categories["phones"])
+    app.front.add_product_to_cart(td.products["second"], td.categories["phones"])
+    app.front.add_product_to_cart(td.products["third"], td.categories["phones"])
     app.front.go_to_cart()

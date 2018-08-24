@@ -49,10 +49,10 @@ class frontend_helper:
 
     def add_product_to_cart(self, product_name, category_name):
         wd = self.app.wd
+        self.go_to_category(category_name)
         self.click_product(product_name)
         self.max_window()
         self.click_button_add_to_cart()
-        self.go_to_category(category_name)
 
     def go_to_cart(self):
         wd = self.app.wd
