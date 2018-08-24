@@ -8,6 +8,10 @@ class Frontend_helper:
     def __init__(self, app):
         self.app = app
 
+    def check_search_products(self):
+        wd = self.app.wd
+        return wd.find_element_by_name("query")
+
     def go_to_category(self, category_name):
         wd = self.app.wd
         wd.find_element_by_class_name("%s" % category_name).click()
@@ -15,9 +19,6 @@ class Frontend_helper:
     def check_label_new_on_product(self, product_name):
         wd = self.app.wd
         return wd.find_element(By.XPATH, "//*[@alt = '%s']/../*[@title = 'New']" % product_name)
-
-    def check_url(self, url):
-        return EC.url_contains(url)
 
     def check_shopping_cart(self):
         wd = self.app.wd
