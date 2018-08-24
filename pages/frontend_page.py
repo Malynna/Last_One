@@ -109,3 +109,7 @@ class Frontend_helper:
     def click_button_save_changes(self):
         wait = self.app.common.wait()
         wait.until(EC.element_to_be_clickable((By.NAME, "save_customer_details"))).click()
+
+    def click_button_confirm_order(self):
+        wait = self.app.common.wait()
+        wait.until(EC.element_to_be_clickable((By.NAME, "confirm_order"))).click()
