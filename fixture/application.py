@@ -1,15 +1,16 @@
 from selenium import webdriver
-from Pages.backend_page import backend_helper
-from Pages.common import commmon_helper
-from Pages.frontend_page import frontend_helper
+from pages.backend_page import BackendHelper
+from pages.common import CommmonHelper
+from pages.frontend_page import FrontendHelper
 
-class application:
+
+class Application:
 
     def __init__(self):
         self.wd = webdriver.Chrome()
-        self.back = backend_helper(self)
-        self.front = frontend_helper(self)
-        self.common = commmon_helper(self)
+        self.back = BackendHelper(self)
+        self.front = FrontendHelper(self)
+        self.common = CommmonHelper(self)
 
     def open_url(self, url):
         wd = self.wd
