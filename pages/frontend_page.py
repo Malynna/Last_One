@@ -105,3 +105,7 @@ class Frontend_helper:
         phone_box.click()
         phone_box.clear()
         phone_box.send_keys(phone)
+
+    def click_button_save_changes(self):
+        wait = self.app.common.wait()
+        wait.until(EC.element_to_be_clickable((By.NAME, "save_customer_details"))).click()

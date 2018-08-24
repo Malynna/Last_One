@@ -22,5 +22,5 @@ def test_buy_products(app):
                                       td.personal_data["last_name"], td.personal_data["address_1"],
                                       td.personal_data["address_2"], td.personal_data["postal_code"], td.personal_data["city"],
                                       td.personal_data["email"],td.personal_data["phone"])
-
+    app.front.click_button_save_changes()
     time.sleep(2)
