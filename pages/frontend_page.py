@@ -61,21 +61,45 @@ class frontend_helper:
         wd = self.app.wd
         return wd.find_element_by_id("cart").click()
 
-"""
     def fill_in_personal_fields(self):
         wd = self.app.wd
         tax_id_box = wd.find_element_by_name("tax_id")
         tax_id_box.click()
         tax_id_box.clear()
-        tax_id_box.send_keys(username)
-    tax_id_box
-    company_box
-    first_name_box
-    last_name_box
-    address_1_box
-    address_2_box
-    postal_code_box
-    city_box
-    email_box
-    phone_box
-"""
+        tax_id_box.send_keys(tax_id)
+        company_box = wd.find_element_by_name("tax_id")
+        company_box.click()
+        company_box.clear()
+        company_box.send_keys(tax_id)
+        first_name_box = wd.find_element_by_name("tax_id")
+        first_name_box.click()
+        first_name_box.clear()
+        first_name_box.send_keys(tax_id)
+        last_name_box = wd.find_element_by_name("tax_id")
+        last_name_box.click()
+        last_name_box.clear()
+        last_name_box.send_keys(tax_id)
+        address_1_box = wd.find_element_by_name("tax_id")
+        address_1_box.click()
+        address_1_box.clear()
+        address_1_box.send_keys(tax_id)
+        address_2_box = wd.find_element_by_name("tax_id")
+        address_2_box.click()
+        address_2_box.clear()
+        address_2_box.send_keys(tax_id)
+        postal_code_box = wd.find_element_by_name("tax_id")
+        postal_code_box.click()
+        postal_code_box.clear()
+        postal_code_box.send_keys(tax_id)
+        city_box = wd.find_element_by_name("tax_id")
+        city_box.click()
+        city_box.clear()
+        city_box.send_keys(tax_id)
+        email_box = wd.find_element_by_name("tax_id")
+        email_box.click()
+        email_box.clear()
+        email_box.send_keys(tax_id)
+        phone_box = wd.find_element_by_name("tax_id")
+        phone_box.click()
+        phone_box.clear()
+        phone_box.send_keys(tax_id)
