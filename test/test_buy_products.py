@@ -1,3 +1,4 @@
+__author__= "Malinex"
 import pytest
 from fixture.application import Application
 from config import config

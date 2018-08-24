@@ -1,3 +1,4 @@
+__author__= "Malinex"
 from data.random_generator import RandomGenerator
 
 

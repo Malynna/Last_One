@@ -1,3 +1,4 @@
+__author__= "Malinex"
 from selenium.webdriver.support.wait import WebDriverWait
 
 

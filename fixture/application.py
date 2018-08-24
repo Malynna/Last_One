@@ -1,3 +1,4 @@
+__author__= "Malinex"
 from selenium import webdriver
 from pages.backend_page import BackendHelper
 from pages.common import CommmonHelper

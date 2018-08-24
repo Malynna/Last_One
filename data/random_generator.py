@@ -1,3 +1,4 @@
+__author__= "Malinex"
 import string
 from random import *
 

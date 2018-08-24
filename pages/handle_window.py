@@ -1,3 +1,4 @@
+__author__= "Malinex"
 import time
 from win32com import client
 import win32com
