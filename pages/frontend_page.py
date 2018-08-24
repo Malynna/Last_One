@@ -64,7 +64,8 @@ class frontend_helper:
     def fill_in_personal_fields(self, tax_id, company, first_name, last_name, address_1, address_2,
                                 postal_code, city, email, phone):
         wd = self.app.wd
-        tax_id_box = wd.find_element_by_name("tax_id")
+        wait = self.app.common.wait()
+        tax_id_box = wait.until(EC.visibility_of_element_located((By.NAME,("tax_id"))))
         tax_id_box.click()
         tax_id_box.clear()
         tax_id_box.send_keys(tax_id)

@@ -12,16 +12,16 @@ class test_data(random_generator):
     }
 
     products = {
-        "first" : "Mi A1",
-        "second" : "Mi 8",
-        "third" : "Mi Mix 2S",
-        "new_product" : (random_generator.new_product),
-        "price" : (random_generator.price)
+        "first": "Mi A1",
+        "second": "Mi 8",
+        "third": "Mi Mix 2S",
+        "new_product": (random_generator.new_product),
+        "price": (random_generator.price)
     }
 
     personal_data= {
-        "tax_id" : (random_generator.tax_id),
-        "company" : (random_generator.company),
+        "tax_id": (random_generator.tax_id),
+        "company": (random_generator.company),
         "first_name": (random_generator.first_name),
         "last_name": (random_generator.last_name),
         "address_1": (random_generator.address_1),
