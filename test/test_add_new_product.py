@@ -23,4 +23,5 @@ def test_add_new_product(app):
     app.front.go_to_category(td.categories["lukasz"])
     assert app.front.check_label_new_on_product(td.products["new_product"])
     app.front.add_product_to_cart(td.products["new_product"], td.categories["lukasz"])
+    assert app.front.check_no_emptyness_in_cart()
     time.sleep(3)

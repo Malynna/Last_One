@@ -40,6 +40,9 @@ class frontend_helper:
         products = int(wd.find_element_by_css_selector("div#cart span.quantity").text)
         return products
 
+    def check_no_emptyness_in_cart(self):
+        if self.check_number_of_producs_in_cart() >0: return True
+
     def click_button_add_to_cart(self):
         products = self.check_number_of_producs_in_cart()
         wait = self.app.common.wait()
