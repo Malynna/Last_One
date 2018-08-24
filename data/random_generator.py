@@ -3,16 +3,16 @@ from random import *
 
 
 class Random_generator:
-    def random_chars(min_chars, max_chars):
+    def random_chars(min, max):
         allchars = string.ascii_letters + string.digits
-        return "".join(choice(allchars) for x in range(randint(min_chars, max_chars)))
+        return "".join(choice(allchars) for x in range(randint(min, max)))
 
-    def random_digits( min_chars, max_chars):
-        return "".join(choice(string.digits) for x in range(randint(min_chars, max_chars)))
+    def random_digits( min, max):
+        return "".join(choice(string.digits) for x in range(randint(min, max)))
 
     new_product = "P " + random_chars(4, 8)
     price = random_digits(1 ,3)
-    tax_id = random_digits(3 ,7)
+    tax_id = "PL" + random_digits(10 ,10)
     company = "Com " + random_chars(4, 8)
     first_name = random_chars(8, 10)
     last_name = random_chars(4, 8)
