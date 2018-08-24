@@ -23,3 +23,4 @@ def test_buy_products(app):
                                             td.personal_data["address_1"],td.personal_data["address_2"],
                                             td.personal_data["postal_code"], td.personal_data["city"],
                                             td.personal_data["email"],td.personal_data["phone"])
+    assert app.front.check_message_on_site()

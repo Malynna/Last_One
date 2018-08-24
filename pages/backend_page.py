@@ -54,6 +54,7 @@ class Backend_helper:
         wd = self.app.wd
         name_box = wd.find_element_by_name("name[en]")
         name_box.click()
+        name_box.clear()
         name_box.send_keys(product_name)
 
     def go_to_product_price_tab(self):
@@ -64,6 +65,7 @@ class Backend_helper:
         wd = self.app.wd
         usd_price = wd.find_element_by_name("gross_prices[USD]")
         usd_price.click()
+        usd_price.clear()
         usd_price.send_keys(price)
 
     def go_to_product_stock_tab(self):

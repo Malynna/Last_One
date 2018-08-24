@@ -30,7 +30,8 @@ class Frontend_helper:
 
     def click_product(self, product_name):
         wd = self.app.wd
-        return wd.find_element_by_css_selector(".product.column.hover-light[data-name='%s']" % product_name).click()
+        return wd.find_element_by_css_selector(".product.column.hover-light[data-name='%s']"
+                                               % product_name).click()
 
     def max_window(self):
         wait = self.app.common.wait()
@@ -49,7 +50,8 @@ class Frontend_helper:
         wait = self.app.common.wait()
         wd = self.app.wd
         wait.until(EC.visibility_of_element_located((By.NAME, "add_cart_product"))).click()
-        wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "div#cart span.quantity"), str(products + 1)))
+        wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR,
+                                                     "div#cart span.quantity"), str(products + 1)))
 
     def add_product_to_cart(self, product_name, category_name):
         wd = self.app.wd
@@ -66,7 +68,7 @@ class Frontend_helper:
                                 postal_code, city, email, phone):
         wd = self.app.wd
         wait = self.app.common.wait()
-        tax_id_box = wait.until(EC.visibility_of_element_located((By.NAME,("tax_id"))))
+        tax_id_box = wait.until(EC.visibility_of_element_located((By.NAME, ("tax_id"))))
         tax_id_box.click()
         tax_id_box.clear()
         tax_id_box.send_keys(tax_id)
@@ -121,3 +123,8 @@ class Frontend_helper:
                                      postal_code, city, email, phone)
         self.click_button_save_changes()
         self.click_button_confirm_order()
+
+    def check_message_on_site(self):
+        wait = self.app.common.wait()
+        return wait.until(EC.text_to_be_present_in_element((By.XPATH, "//*[@id='main-message']/h1"),
+                                                    "Ta strona nie działa"))
