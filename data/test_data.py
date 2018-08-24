@@ -1,10 +1,7 @@
-from data.randomgenerator import RandomGenerator
-
-
+from data.random_generator import RandomGenerator
 
 
 class TestData(RandomGenerator):
-
 
     categories = {
         "phones": "category-1",

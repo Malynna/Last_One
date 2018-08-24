@@ -1,7 +1,7 @@
 import pytest
 from fixture.application import Application
 from config import config
-from data.testdata import TestData as td
+from data.test_data import TestData as td
 
 @pytest.fixture
 def app(request):
