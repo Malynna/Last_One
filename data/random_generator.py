@@ -3,6 +3,7 @@ from random import *
 
 
 class RandomGenerator:
+
     def random_chars(min, max):
         allchars = string.ascii_letters + string.digits
         return "".join(choice(allchars) for x in range(randint(min, max)))

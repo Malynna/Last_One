@@ -3,6 +3,7 @@ from pages.backend_page import BackendHelper
 from pages.common import CommmonHelper
 from pages.frontend_page import FrontendHelper
 
+
 class Application:
 
     def __init__(self):
