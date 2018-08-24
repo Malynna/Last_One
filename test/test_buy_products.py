@@ -13,7 +13,7 @@ def app(request):
 
 def test_buy_products(app):
     app.open_url(config.base_url)
-    assert app.front.check_shopping_cart() and app.front.check_search_products()
+    assert app.front.check_shopping_cart()
     app.front.add_product_to_cart(td.products["first"], td.categories["phones"])
     app.front.add_product_to_cart(td.products["second"], td.categories["phones"])
     app.front.add_product_to_cart(td.products["third"], td.categories["phones"])

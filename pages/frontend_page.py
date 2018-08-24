@@ -8,10 +8,6 @@ class FrontendHelper:
     def __init__(self, app):
         self.app = app
 
-    def check_search_products(self):
-        wd = self.app.wd
-        return wd.find_element_by_name("query")
-
     def go_to_category(self, category_name):
         wd = self.app.wd
         wd.find_element_by_class_name("%s" % category_name).click()
