@@ -113,3 +113,10 @@ class Frontend_helper:
     def click_button_confirm_order(self):
         wait = self.app.common.wait()
         wait.until(EC.element_to_be_clickable((By.NAME, "confirm_order"))).click()
+
+    def fill_fields_and_confirm_order(self, tax_id, company, first_name, last_name, address_1, address_2,
+                                      postal_code, city, email, phone):
+        self.fill_in_personal_fields(tax_id, company, first_name, last_name, address_1, address_2,
+                                     postal_code, city, email, phone)
+        self.click_button_save_changes()
+        self.click_button_confirm_order()
