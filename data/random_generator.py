@@ -12,3 +12,13 @@ class random_generator:
 
     new_product = "P " + random_chars(4, 8)
     price = random_digits(1 ,3)
+    tax_id = random_digits(3 ,7)
+    company = "Com " + random_chars(4, 8)
+    first_name = random_chars(8, 10)
+    last_name = random_chars(4, 8)
+    address_1 = random_chars(4, 8)
+    address_2 = random_chars(4, 8) + random_digits(1,3)
+    postal_code = random_digits(2,2) + "-" + random_digits(3,3)
+    city = random_chars(8, 10)
+    email = random_chars(5, 10) + "@" + random_chars(2, 5) + "." + random_chars(2, 3)
+    phone = "+" + random_digits(11,11)
