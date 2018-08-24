@@ -4,7 +4,7 @@ import win32com
 from config import config
 
 def HandleWindow(self):
-    wd = self.wd
+
     shell = win32com.client.Dispatch("WScript.Shell")
     shell.Sendkeys(config.username)
     time.sleep(2)
